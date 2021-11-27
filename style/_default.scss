@@ -72,6 +72,36 @@ a {
   padding: 0 16px;
 }
 
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  mask-position: center !important;
+  mask-size: contain !important;
+  mask-repeat: no-repeat !important;
+  background: var(--dark-1);
+
+  &.row-left {
+    mask: url("../images/icons/arrow-left.svg");
+  }
+
+  &.row-right {
+    mask: url("../images/icons/arrow-right.svg");
+  }
+  &.youtube {
+    mask: url("../images/icons/youtube.svg");
+  }
+  &.twitter {
+    mask: url("../images/icons/twitter.svg");
+  }
+  &.github {
+    mask: url("../images/icons/github.svg");
+  }
+  &.instagram {
+    mask: url("../images/icons/instagram.svg");
+  }
+}
+
 .btn {
   font-size: 18px;
   font-weight: 500;
@@ -110,7 +140,7 @@ section {
   margin: 5% 0;
 
   @media (max-width: 560px) {
-      margin: 8% 0;
+    margin: 8% 0;
   }
 }
 

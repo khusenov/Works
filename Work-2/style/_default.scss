@@ -25,13 +25,14 @@ body {
 }
 
 section {
-  margin: 78px 0;
+  margin-top: 78px;
 }
 
 html:root {
   --light: hsl(0, 0%, 100%);
-  --dark: hsl(204, 19%, 15%);
+  --dark: hsl(0, 0%, 20%);
   --grey: hsl(204, 11%, 50%);
+  --grey-light: hsl(240, 100%, 98%);
   --blue: hsl(251, 100%, 65%);
   --orange: hsl(36, 96%, 54%);
   --rose: hsl(344, 94%, 67%);
@@ -51,7 +52,7 @@ html:root {
     hsl(251, 100%, 72%),
     hsl(251, 99%, 65%)
   );
-  --greadient-green: linear-gradient(
+  --gradient-green: linear-gradient(
     45deg,
     hsl(112, 66%, 77%),
     hsl(191, 55%, 50%)
@@ -98,6 +99,26 @@ a {
   line-height: 1.2em;
 }
 
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  mask-position: center !important;
+  mask-size: contain !important;
+  mask-repeat: no-repeat !important;
+  background: var(--light);
+
+  &.instagram {
+    mask: url('../images/icons/instagram.svg');
+  }
+  &.github {
+    mask: url('../images/icons/github.svg');
+  }
+  &.linkedin {
+    mask: url('../images/icons/linkedin.svg');
+  }
+}
+
 .btn {
   display: inline-block;
   font-weight: 500;
@@ -119,6 +140,9 @@ a {
   }
   &.green {
     background-image: var(--greadient-green);
+  }
+  &.dark {
+    background-color: var(--dark);
   }
 }
 

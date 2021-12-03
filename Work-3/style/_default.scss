@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+
+    &[theme="light"] {
+        --light: hsl(0, 0%, 100%);
+        --dark: hsl(0, 0%, 20%);
+        --grey: hsl(0, 0%, 83%);
+        --blue: hsl(224, 95%, 30%);
+        --blue-light: hsl(207, 59%, 93%);
+        --gradient-blue: linear-gradient(45deg, hsl(224, 95%, 30%), hsl(205, 100%, 73%));
+    }
+}
+
+.container {
+    max-width: calc(1200px + 32px);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+section {
+    padding: 56px 0;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 1.2em;
+
+    @media (max-width: 1024px) {
+        font-size: 42px;
+    }
+
+    @media (max-width: 560px) {
+        font-size: 36px;
+    }
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.2em;
+
+    @media (max-width: 560px) {
+        font-size: 16px;
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    mask-size: contain !important;
+    mask-position: center !important;
+    mask-repeat: no-repeat !important;
+    background: var(--dark);
+
+    &.instagran {
+        mask: url("../images/icons/instagram.svg");
+    }
+
+    &.github {
+        mask: url("../images/icons/github.svg");
+    }
+
+    &.linkedin {
+        mask: url("../images/icons/linkedin.svg");
+    }
+}

@@ -25,7 +25,6 @@ html:root {
     --danger: hsl(15, 98%, 44%);
 
     --bg-green: hsla(149, 92%, 42%, 0.1);
-
     --transition: 150ms;
 }
 
@@ -214,6 +213,18 @@ i.icon {
     &.star {
         mask: url('../images/icons/star.svg');
     }
+
+    &.facebook {
+        mask: url('../images/facebook.svg');
+    }
+
+    &.instagram {
+        mask: url('../images/instagram.svg');
+    }
+
+    &.telegram {
+        mask: url('../images/telegram.svg');
+    }
 }
 
 .btn {
@@ -223,11 +234,24 @@ i.icon {
     line-height: 1.2em;
     padding: 18px 36px;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter ease var(--transition);
+
+    &:hover {
+        filter: brightness(120%);
+    }
+
+    &:active {
+        filter: brightness(80%);
+    }
 
     .icon {
         width: 25px;
         height: 25px;
         margin-right: 14px;
+        background-color: var(--light);
     }
 
     &.lg {

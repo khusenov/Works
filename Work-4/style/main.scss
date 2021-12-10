@@ -761,3 +761,133 @@
         }
     }
 }
+
+.footer {
+    margin-top: 2rem;
+    display: none;
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__body>* {
+        width: calc(25% - 0.75rem);
+    }
+
+    &__content:first-child {
+        img {
+            width: 50%;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--light-2);
+            margin-bottom: 1.5em;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+        a {
+            @include center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: var(--blue);
+
+            &:not(:last-child) {
+                margin: 0 0.75rem 0 0;
+            }
+        }
+    }
+
+    &__menu {
+        width: max-content;
+
+        h4 {
+            color: var(--blue);
+        }
+
+        li:not(:last-child) {
+            margin: 0 0 0.75rem 0;
+        }
+
+        li:first-child {
+            margin: 0 0 1rem 0;
+        }
+
+        a {
+            color: var(--light-1);
+            transition: color ease var(--transition);
+        }
+
+        a:hover {
+            color: var(--blue);
+        }
+    }
+
+    &__content:last-child {
+        h4 {
+            color: var(--blue);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: var(--light-2);
+            margin-bottom: 1.5em;
+        }
+
+        form {
+            display: flex;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5em 0.25em 0.5em 1.5em;
+            border-radius: 100vh 0 0 100vh;
+            border: none;
+            color: var(--dark-2);
+
+            &::placeholder {
+                color: var(--dark-2);
+                opacity: 0.25;
+            }
+        }
+
+        button {
+            border-radius: 0 100vh 100vh 0;
+        }
+    }
+
+    &__bottom {
+        margin-top: 4rem;
+        padding: 2rem 0;
+        position: relative;
+
+        &__body {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        p {
+            color: var(--light-2);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            height: 1px;            
+            background: var(--light-1);
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0.25;
+        }
+    }
+}

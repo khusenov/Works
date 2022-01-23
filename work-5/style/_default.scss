@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    list-style: none;
+}
+
+html:root {
+    --blue: #2405f2;
+    --blue-dark: #282938;
+    --blue-tint: #1c1e53;
+    --white: #ffffff;
+    --grey: #f4f6fc;
+    --yellow: #fcd980;
+    --accent: #eef4fa;
+
+    --transition: 150ms;
+}
+
+@font-face {
+    font-family: 'Poppins-regular';
+    src: url(../Fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-medium';
+    src: url(../Fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins-semiBold';
+    src: url(../Fonts/Poppins-SemiBold.ttf);
+}
+
+h1 {
+    font-family: 'Poppins-semiBold', sans-serif;
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 74px;
+}
+
+h2 {
+    font-family: 'Poppins-semiBold', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 64px;
+}
+
+h3 {
+    font-family: 'Poppins-semiBold', sans-serif;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 56px;
+}
+
+h4 {
+    font-family: 'Poppins-medium', sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 56px;
+}
+
+h5 {
+    font-family: 'Poppins-medium', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+h6 {
+    font-family: 'Poppins-medium', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+p {
+    font-family: 'Poppins-regular', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+p.medium {
+    font-family: 'Poppins-medium', sans-serif;
+    font-weight: 500;
+}
+
+.label-1 {
+    font-family: 'Poppins-medium', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.label-2 {
+    font-family: 'Poppins-medium', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+@media (max-width: 560px) {
+    h1 {
+        font-size: 36px;
+        line-height: 52px;
+    }
+
+    h2 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+
+    h3 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    h4 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h5 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    h6 {
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+body {
+    @extend p;
+    color: var(--blue-dark);
+    background-color: var(--white);
+}
+
+body.scroll-lock {
+    overflow: hidden;
+}
+
+.btn {
+    @extend .label-1;
+    display: inline-block;
+    padding: 16px 48px;
+    border-radius: 40px;
+    border: none;
+    transition: filter ease var(--transition);
+
+    &-sm {
+        font-size: 16px;
+        padding: 8px 32px;
+    }
+
+    &-yellow {
+        color: var(--blue-dark);
+        background-color: var(--yellow);
+    }
+
+    &-dark {
+        color: var(--white);
+        background-color: var(--blue-dark);
+    }
+
+    &:hover {
+        filter: brightness(110%);
+    }
+
+    &:active {
+        filter: brightness(90%);
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    mask-position: center !important;
+    mask-repeat: no-repeat !important;
+    mask-size: contain !important;
+    background-color: var(--blue-dark);
+
+    &-arrow {
+        mask: url('../icons/arrow.svg');
+    }
+    &-comment {
+        mask: url('../icons/comment.svg');
+    }
+    &-note {
+        mask: url('../icons/note.svg');
+    }
+    &-pen {
+        mask: url('../icons/pen.svg');
+    }
+    &-timer {
+        mask: url('../icons/timer.svg');
+    }
+    &-users {
+        mask: url('../icons/users.svg');
+    }
+    &-verified {
+        mask: url('../icons/verified.svg');
+    }
+}
+
+.link {
+    font-family: 'Poppins-medium', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+
+    .icon {
+        margin: 0 0 0 16px;
+    }
+}
+
+.container {
+    max-width: calc(1280px - 36px);
+    padding: 0 18px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    margin: 84px 0 0 0;
+}
+
+section {
+    padding: 128px 0;
+    @media (max-width: 1024px) {
+        padding: 86px 0;
+    }
+    @media (max-width: 560px) {
+        padding: 64px 0;
+    }
+}
+
+@mixin burger($size, $color) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    border: 0.04 * $size solid $color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        animation: ease calc(2 * var(--transition)) forwards;
+        display: inline-block;
+        width: 0.55 * $size;
+        height: 0.04 * $size;
+        background-color: $color;
+
+        &:nth-child(1) {
+            animation-name: close-1;
+        }
+        &:nth-child(2) {
+            animation-name: close-2;
+            margin: 0.125 * $size 0;
+        }
+        &:nth-child(3) {
+            animation-name: close-3;
+        }
+
+        @keyframes close-1 {
+            0% {
+                transform: translateY(0.165 * $size) rotateZ(45deg);
+            }
+            50% {
+                transform: translateY(0.165 * $size) rotateZ(0);
+            }
+            100% {
+                transform: translateY(0) rotateZ(0);
+            }
+        }
+        @keyframes close-2 {
+            0%,
+            50% {
+                opacity: 0;
+                width: 0;
+            }
+            100% {
+                opacity: 1;
+                width: 0.55 * $size;
+            }
+        }
+        @keyframes close-3 {
+            0% {
+                transform: translateY(-0.165 * $size) rotateZ(-45deg);
+            }
+            50% {
+                transform: translateY(-0.165 * $size) rotateZ(0);
+            }
+            100% {
+                transform: translateY(0) rotateZ(0);
+            }
+        }
+    }
+
+    &.active {
+        span:nth-child(1) {
+            animation-name: open-1;
+        }
+        span:nth-child(2) {
+            animation-name: open-2;
+        }
+        span:nth-child(3) {
+            animation-name: open-3;
+        }
+
+        @keyframes open-1 {
+            0% {
+                transform: translateY(0) rotateZ(0);
+            }
+            50% {
+                transform: translateY(0.165 * $size) rotateZ(0);
+            }
+            100% {
+                transform: translateY(0.165 * $size) rotateZ(45deg);
+            }
+        }
+        @keyframes open-2 {
+            0% {
+                opacity: 1;
+                width: 0.55 * $size;
+            }
+            50%,
+            100% {
+                opacity: 0;
+                width: 0;
+            }
+        }
+        @keyframes open-3 {
+            0% {
+                transform: translateY(0) rotateZ(0);
+            }
+            50% {
+                transform: translateY(-0.165 * $size) rotateZ(0);
+            }
+            100% {
+                transform: translateY(-0.165 * $size) rotateZ(-45deg);
+            }
+        }
+    }
+}

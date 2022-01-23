@@ -24,5 +24,4 @@ const nav = {
         this.isOpen ? this.close() : this.open();
     },
 };
-nav.close();
 nav.burger.addEventListener('click', () => nav.toggle());

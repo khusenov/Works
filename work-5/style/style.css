@@ -851,6 +851,54 @@ section, .header {
 .works__box--big {
   width: calc(65% - 16px);
   padding-top: 45%;
+  position: relative;
+  overflow: hidden;
+}
+
+.works__box--big div {
+  opacity: 0;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: opacity ease calc(2 * var(--transition)), -webkit-transform ease calc(2 * var(--transition));
+  transition: opacity ease calc(2 * var(--transition)), -webkit-transform ease calc(2 * var(--transition));
+  transition: transform ease calc(2 * var(--transition)), opacity ease calc(2 * var(--transition));
+  transition: transform ease calc(2 * var(--transition)), opacity ease calc(2 * var(--transition)), -webkit-transform ease calc(2 * var(--transition));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(329.39deg, #1c1e53 -10.96%, rgba(28, 30, 83, 0.42) 103.96%);
+  padding: 64px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: var(--white);
+}
+
+.works__box--big div p, .works__box--big div body {
+  margin: 16px 0 32px 0;
+}
+
+.works__box--big div .link {
+  color: var(--yellow);
+}
+
+.works__box--big div .link .icon {
+  background-color: var(--yellow);
+}
+
+.works__box--big:hover div {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .works__box-container {
@@ -870,6 +918,54 @@ section, .header {
 .works__box {
   width: 100%;
   height: calc(50% - 16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.works__box div {
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: opacity ease calc(2 * var(--transition)), -webkit-transform ease calc(2 * var(--transition));
+  transition: opacity ease calc(2 * var(--transition)), -webkit-transform ease calc(2 * var(--transition));
+  transition: transform ease calc(2 * var(--transition)), opacity ease calc(2 * var(--transition));
+  transition: transform ease calc(2 * var(--transition)), opacity ease calc(2 * var(--transition)), -webkit-transform ease calc(2 * var(--transition));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(329.39deg, #1c1e53 -10.96%, rgba(28, 30, 83, 0.42) 103.96%);
+  padding: 44px 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: var(--white);
+}
+
+.works__box div h6 {
+  margin: 0 0 10px 0;
+}
+
+.works__box div .link {
+  color: var(--yellow);
+}
+
+.works__box div .link .icon {
+  background-color: var(--yellow);
+}
+
+.works__box:hover div {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .works__box, .works__box--big {
@@ -888,7 +984,7 @@ section, .header {
      object-position: center;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 896px) {
   .works__header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -913,5 +1009,139 @@ section, .header {
   .works__box {
     margin: 24px 0 0 0;
   }
+}
+
+@media (max-width: 960px) {
+  .works__box--big div {
+    width: 100%;
+    -webkit-transform: translateX(0) translateY(100%);
+            transform: translateX(0) translateY(100%);
+    padding: 44px 32px;
+  }
+  .works__box--big:hover {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .works__box--big p, .works__box--big body {
+    display: none;
+  }
+  .works__box--big h6 {
+    margin: 0 0 10px 0;
+  }
+}
+
+.features {
+  background-color: var(--accent);
+}
+
+.features__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.features h2 {
+  margin: 12px 0 24px 0;
+  max-width: 630px;
+  text-align: center;
+}
+
+.features__box-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.features__box {
+  width: calc(33.333333333% - 16px);
+  background-color: var(--white);
+  padding: 48px 32px;
+  margin: 24px 0 0 0;
+}
+
+.features__box .icon {
+  background-color: var(--blue);
+}
+
+.features__box h6 {
+  margin: 24px 0 12px 0;
+}
+
+.features__box p, .features__box body {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .features__box {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .features__box-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .features__box {
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+  }
+}
+
+.testimonials {
+  background-color: var(--grey);
+}
+
+.testimonials__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.testimonials__content {
+  width: calc(35% - 16px);
+}
+
+.testimonials__content p, .testimonials__content body {
+  opacity: 0.7;
+  margin: 16px 0 0 0;
+}
+
+.testimonials__box-container {
+  width: calc(65% - 16px);
 }
 /*# sourceMappingURL=style.css.map */
